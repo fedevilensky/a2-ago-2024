@@ -176,6 +176,8 @@ private:
     node->height = 1 + max(height(node->left), height(node->right));
 
     node = rebalance(node);
+
+    return node;
   }
   void inOrderLoad(List<T> *l, AVLNode<T> node)
   {
@@ -189,7 +191,7 @@ private:
   }
 
 public:
-  iterator<T> iterable() override
+  iterator<T> iterator() override
   {
     List<T> *l = new LinkedList<T>();
 
